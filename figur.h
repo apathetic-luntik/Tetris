@@ -17,6 +17,10 @@ enum TYPE_DIRECTION : int { RIGHT = 0, LEFT = 1 };
 
 class Figur {
 public:
+    virtual ~Figur(){
+        Logger *logger = Logger::instance();
+        logger->log(" Фигура удалена ");
+    }
     void step(TYPE_DIRECTION dir);
     void down();
     std::array<std::pair<int, int>, 4> cell() { return _cell; }

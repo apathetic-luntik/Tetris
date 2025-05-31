@@ -35,22 +35,24 @@ Widget::~Widget()
     delete model;
     delete timer;
     delete ui;
+    Logger *logger = Logger::instance();
+    logger->log(" Удаление игрового окна");
 }
 
 void Widget::on_start_clicked()
 {
-    // Logger *logger = Logger::instance();
-    // logger->log(" Игра запущена");
+     Logger *logger = Logger::instance();
+     logger->log(" Игра запущена");
     timer->start(speed);
     model->newFigure();
 }
 
 void Widget::on_zanovo_clicked()
 {
-    // Logger *logger = Logger::instance();
-    // logger->log(" Игра перезапущена");
+ Logger *logger = Logger::instance();
+    logger->log(" Игра перезапущена");
     timer->stop();
-    qDebug() << Q_FUNC_INFO;
+    //qDebug() << Q_FUNC_INFO;
 
     ui->scoreNum->setText("0");
     this->setEnabled(true);
@@ -59,7 +61,7 @@ void Widget::on_zanovo_clicked()
 
 void Widget::slotTimerAlarm()
 {
-    qDebug() << Q_FUNC_INFO;
+   // qDebug() << Q_FUNC_INFO;
     model->down();
 }
 
@@ -71,9 +73,9 @@ void Widget::gameOver()
     //все фигурки становятся серыми
 
     auto score = ui->scoreNum->text();
-    // Logger *logger = Logger::instance();
+     Logger *logger = Logger::instance();
     std::string st = " Конец игры со счетом " + score.toStdString();
-    // logger->log(st);
+     logger->log(st);
     QMessageBox *messageGameOver =
         new QMessageBox(QMessageBox::Information, "Тетрис",
                         "<p>    Конец игры!    </p> Счёт " + score, QMessageBox::Ok);

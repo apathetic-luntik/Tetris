@@ -6,10 +6,10 @@ TableModel::TableModel()
     factory = new RandomFigureFactory();
     int col = 10;
     int row = 15;
-    // Logger *logger = Logger::instance();
+    Logger *logger = Logger::instance();
     std::string st = "Создан класс TableModel: размер поля " + std::to_string(col) + "X" +
                      std::to_string(row);
-    // logger->log(st);
+    logger->log(st);
     setRowCount(row);
     setColumnCount(col);
     for (int i = 0; i < row; i++)
@@ -32,11 +32,13 @@ TableModel::~TableModel()
     delete factory;
     if (_figure != nullptr)
         delete _figure;
+    Logger *logger = Logger::instance();
+    logger->log(" Удаление игрового поля");
 }
 
 void TableModel::restart()
 {
-    qDebug() << Q_FUNC_INFO;
+   // qDebug() << Q_FUNC_INFO;
     size_t col = columnCount();
     size_t row = rowCount();
     if (_figure != nullptr) {
@@ -58,7 +60,7 @@ void TableModel::restart()
 
 void TableModel::paint(const std::array<std::pair<int, int>, 4> &fig, TYPE_CELL typeFig)
 {
-    qDebug() << Q_FUNC_INFO;
+  //  qDebug() << Q_FUNC_INFO;
 
     for (size_t i = 0; i < fig.size(); i++) {
         auto row = fig.at(i).first;
@@ -88,7 +90,7 @@ void TableModel::paint(const std::array<std::pair<int, int>, 4> &fig, TYPE_CELL 
 
 void TableModel::down()
 {
-    qDebug() << Q_FUNC_INFO;
+   // qDebug() << Q_FUNC_INFO;
 
     if (_figure != nullptr) {
 
@@ -131,7 +133,7 @@ bool TableModel::cellFigure()
 
 bool TableModel::downCellWall()
 {
-    qDebug() << Q_FUNC_INFO;
+    //qDebug() << Q_FUNC_INFO;
     auto fig = _figure->prov_down();
     for (size_t i = 0; i < fig.size(); i++) {
         auto cell = fig.at(i);
@@ -152,7 +154,7 @@ bool TableModel::downCellWall()
 
 bool TableModel::upCellWall()
 {
-    qDebug() << Q_FUNC_INFO;
+   // qDebug() << Q_FUNC_INFO;
     auto fig = _figure->prov_up();
     for (size_t i = 0; i < fig.size(); i++) {
         auto cell = fig.at(i);
@@ -164,7 +166,7 @@ bool TableModel::upCellWall()
 
 bool TableModel::cboky(TYPE_DIRECTION dir)
 {
-    qDebug() << Q_FUNC_INFO;
+   // qDebug() << Q_FUNC_INFO;
     if (dir == TYPE_DIRECTION::LEFT) {
         auto fig = _figure->prov_left();
         for (size_t i = 0; i < fig.size(); i++) {
@@ -207,7 +209,7 @@ bool TableModel::cboky(TYPE_DIRECTION dir)
 
 void TableModel::steap(TYPE_DIRECTION dir)
 {
-    qDebug() << Q_FUNC_INFO;
+   // qDebug() << Q_FUNC_INFO;
     if (_figure != nullptr) {
         if (cboky(dir))
             return;
@@ -219,7 +221,7 @@ void TableModel::steap(TYPE_DIRECTION dir)
 
 void TableModel::clearRow(size_t row)
 {
-    qDebug() << Q_FUNC_INFO;
+  //  qDebug() << Q_FUNC_INFO;
     //    qDebug() << "row = " << row;
     size_t col = columnCount();
 
@@ -261,7 +263,7 @@ void TableModel::clearRow(size_t row)
 
 void TableModel::checkRow()
 {
-    qDebug() << Q_FUNC_INFO;
+  //  qDebug() << Q_FUNC_INFO;
     size_t col = columnCount();
     size_t row = rowCount();
     //    qDebug() << "col = " << col << " row =" << row;
@@ -286,7 +288,7 @@ void TableModel::checkRow()
 
 void TableModel::newFigure()
 {
-    qDebug() << Q_FUNC_INFO;
+   // qDebug() << Q_FUNC_INFO;
     if (_figure == nullptr) {
         _figure = factory->createFigure(columnCount());
         if (cellFigure())

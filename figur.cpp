@@ -69,8 +69,8 @@ Figur_1::Figur_1(int col)
 
     figur_color = colorMap.at(generator->bounded(1, 6));
 
-    // Logger *logger = Logger::instance();
-    // logger->log(" Создана новая фигура 1");
+    Logger *logger = Logger::instance();
+    logger->log(" Создана новая фигура 1");
 }
 
 std::vector<std::pair<int, int>> Figur_1::prov_down()
@@ -127,8 +127,8 @@ Figur_2::Figur_2(int col)
     _cell[3].first = 0;
 
     figur_color = colorMap.at(generator->bounded(1, 6));
-    // Logger *logger = Logger::instance();
-    // logger->log(" Создана новая фигура 2");
+    Logger *logger = Logger::instance();
+    logger->log(" Создана новая фигура 2");
 }
 
 std::vector<std::pair<int, int>> Figur_2::prov_down()
@@ -186,8 +186,8 @@ Figur_3::Figur_3(int col)
     _cell[3].first = -1;
 
     figur_color = colorMap.at(generator->bounded(1, 6));
-    // Logger *logger = Logger::instance();
-    // logger->log(" Создана новая фигура 3");
+     Logger *logger = Logger::instance();
+    logger->log(" Создана новая фигура 3");
 }
 
 std::vector<std::pair<int, int>> Figur_3::prov_down()
@@ -247,8 +247,8 @@ Figur_4::Figur_4(int col)
     _cell[3].first = 0;
 
     figur_color = colorMap.at(generator->bounded(1, 6));
-    // Logger *logger = Logger::instance();
-    // logger->log(" Создана новая фигура 4");
+Logger *logger = Logger::instance();
+    logger->log(" Создана новая фигура 4");
 }
 
 std::vector<std::pair<int, int>> Figur_4::prov_down()
@@ -307,8 +307,8 @@ Figur_5::Figur_5(int col)
 
     figur_color = colorMap.at(generator->bounded(1, 6));
 
-    // Logger *logger = Logger::instance();
-    // logger->log(" Создана новая фигура 5");
+    Logger *logger = Logger::instance();
+    logger->log(" Создана новая фигура 5");
 }
 
 std::vector<std::pair<int, int>> Figur_5::prov_down()
@@ -369,8 +369,8 @@ Figur_6::Figur_6(int col)
     _cell[3].first = 0;
 
     figur_color = colorMap.at(generator->bounded(1, 6));
-    // Logger *logger = Logger::instance();
-    // logger->log(" Создана новая фигура 6");
+    Logger *logger = Logger::instance();
+    logger->log(" Создана новая фигура 6");
 }
 
 std::vector<std::pair<int, int>> Figur_6::prov_down()
@@ -430,8 +430,8 @@ Figur_7::Figur_7(int col)
     _cell[3].first = 0;
 
     figur_color = colorMap.at(generator->bounded(1, 6));
-    // Logger *logger = Logger::instance();
-    // logger->log(" Создана новая фигура 7");
+ Logger *logger = Logger::instance();
+logger->log(" Создана новая фигура 7");
 }
 
 std::vector<std::pair<int, int>> Figur_7::prov_down()
@@ -492,8 +492,8 @@ Figur_8::Figur_8(int col)
     _cell[3].first = 0;
 
     figur_color = colorMap.at(generator->bounded(1, 6));
-    // Logger *logger = Logger::instance();
-    // logger->log(" Создана новая фигура 8");
+    Logger *logger = Logger::instance();
+    logger->log(" Создана новая фигура 8");
 }
 
 std::vector<std::pair<int, int>> Figur_8::prov_down()
@@ -551,8 +551,8 @@ Figur_9::Figur_9(int col)
     _cell[3].second = _cell[1].second;
     _cell[3].first = 0;
     figur_color = colorMap.at(generator->bounded(1, 6));
-    // Logger *logger = Logger::instance();
-    // logger->log(" Создана новая фигура 9");
+    Logger *logger = Logger::instance();
+logger->log(" Создана новая фигура 9");
 }
 
 std::vector<std::pair<int, int>> Figur_9::prov_down()
@@ -610,8 +610,8 @@ Figur_10::Figur_10(int col)
     _cell[3].first = -1;
 
     figur_color = colorMap.at(generator->bounded(1, 6));
-    // Logger *logger = Logger::instance();
-    // logger->log(" Создана новая фигура 10");
+    Logger *logger = Logger::instance();
+    logger->log(" Создана новая фигура 10");
 }
 
 std::vector<std::pair<int, int>> Figur_10::prov_down()
@@ -672,8 +672,8 @@ Figur_11::Figur_11(int col)
     _cell[3].first = -1;
 
     figur_color = colorMap.at(generator->bounded(1, 6));
-    // Logger *logger = Logger::instance();
-    // logger->log(" Создана новая фигура 11");
+ Logger *logger = Logger::instance();
+ logger->log(" Создана новая фигура 11");
 }
 
 std::vector<std::pair<int, int>> Figur_11::prov_down()
@@ -732,8 +732,8 @@ Figur_12::Figur_12(int col)
     _cell[3].first = 0;
 
     figur_color = colorMap.at(generator->bounded(1, 6));
-    // Logger *logger = Logger::instance();
-    // logger->log(" Создана новая фигура 12");
+     Logger *logger = Logger::instance();
+    logger->log(" Создана новая фигура 12");
 }
 
 std::vector<std::pair<int, int>> Figur_12::prov_down()
@@ -857,8 +857,8 @@ Figur_14::Figur_14(int col)
     _cell[3].first = 0;
 
     figur_color = colorMap.at(generator->bounded(1, 6));
-    // Logger *logger = Logger::instance();
-    // logger->log(" Создана новая фигура 14");
+ Logger *logger = Logger::instance();
+    logger->log(" Создана новая фигура 14");
 }
 
 std::vector<std::pair<int, int>> Figur_14::prov_down()
@@ -917,8 +917,8 @@ Figur_15::Figur_15(int col)
     _cell[3].first = 0;
 
     figur_color = colorMap.at(generator->bounded(1, 6));
-    // Logger *logger = Logger::instance();
-    // logger->log(" Создана новая фигура 15");
+ Logger *logger = Logger::instance();
+     logger->log(" Создана новая фигура 15");
 }
 
 std::vector<std::pair<int, int>> Figur_15::prov_down()
